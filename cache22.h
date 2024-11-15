@@ -18,7 +18,7 @@
 #include <unistd.h>
 
 #define HOST "127.0.0.1"
-#define PORT "12049"
+#define PORT "12050"
 
 /* #define log(x, args...) printf(x _VA_OPT_(, ) args) */
 #define log(x, args...) printf(x, args)
@@ -34,8 +34,10 @@ struct s_client {
 };
 typedef struct s_client Client;
 
+void zero(int8 *, int16);
+void child_loop(Client *);
 void mainloop(int);
 int initserver(int16 port);
-int main(int, char**);
+int main(int, char **);
 
 #endif
